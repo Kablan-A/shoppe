@@ -1,0 +1,27 @@
+.search {
+  width: 100%;
+  position: relative;
+
+  & .fa-search {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.75rem;
+    color: $light;
+  }
+
+  &__input {
+    height: 2rem;
+    padding-left: 2.25rem;
+    border-radius: 0.625rem;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// @include media-breakpoint-up(xl) {
+//   .search {
+//     width: 20%;
+//   }
+// }

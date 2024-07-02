@@ -1,0 +1,25 @@
+.nav-link-with-icon {
+  display: flex !important;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+@include media-breakpoint-up(xl) {
+  .nav-item {
+    display: flex;
+    justify-content: center;
+
+    &:has(.active),
+    &:hover {
+      border-bottom: 1px solid $primary;
+    }
+  }
+
+  .nav-link-with-icon span {
+    display: none;
+  }
+}
