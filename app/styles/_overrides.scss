@@ -8,6 +8,14 @@ $light: #9ca3af;
 $link-decoration: none;
 // ------link:end------
 
+// ------form------
+.form-control {
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+// ------form:end------
+
 // ------container------
 $container-padding-x: 2rem;
 // ------container:end------

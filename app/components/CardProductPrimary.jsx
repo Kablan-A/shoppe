@@ -1,14 +1,22 @@
 import Image from "next/image";
+import Link from "next/link";
 
-function CardProductPrimary({ img, title, price, link }) {
+function CardProductPrimary({ img, title, link, currPrice, prevPrice }) {
   return (
     <div className="card bg-transparent border-0 rounded-3 overflow-hidden">
-      <a href={link} className="rounded-3 overflow-hidden">
+      <Link href={link} className="rounded-3 overflow-hidden">
         <Image src={img} alt={title} priority className="w-100 h-auto" />
-      </a>
-      <div className="card-body text-primary ps-0">
+      </Link>
+      <div className="card-body text-primary px-0 pb-0">
         <h5 className="card-title text-capitalize">{title}</h5>
-        <p className="card-text text-secondary">$ {price}</p>
+        <div className="d-flex align-items-center gap-2 card-text text-secondary">
+          {prevPrice && (
+            <p className="text-danger text-decoration-line-through">
+              $ {prevPrice}
+            </p>
+          )}
+          <p>$ {currPrice}</p>
+        </div>
       </div>
     </div>
   );

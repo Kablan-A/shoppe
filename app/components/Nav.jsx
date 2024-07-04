@@ -4,25 +4,37 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
-  faBarsStaggered,
-  faClose,
   faUser,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 import Search from "./Search";
+import { usePathname } from "next/navigation";
 
 function Nav() {
+  const pathname = usePathname();
   const [isToggled, setIsToggled] = useState(false);
+
+  function isActive(linkPath) {
+    if (pathname !== linkPath) {
+      return "";
+    }
+    return "active";
+  }
 
   return (
     <nav className="navbar navbar-expand-xl">
       <div className="container d-xl-flex align-content-xl-center">
-        <a className="navbar-brand text-uppercase me-auto" href="/">
+        <Link href="/" className="navbar-brand text-uppercase me-auto">
           <span className="text-secondary">s</span>hoppe
-        </a>
-        <FontAwesomeIcon icon={faCartShopping} />
+        </Link>
+        <Link href="/">
+          <FontAwesomeIcon icon={faCartShopping} />
+        </Link>
         <button
-          className="navbar-toggler border-0 ms-2 text-primary shadow-none"
+          className={`navbar-toggler ${
+            isToggled && "navbar-toggler--toggled"
+          } border-0 ms-2 text-primary shadow-none`}
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -31,10 +43,7 @@ function Nav() {
           aria-label="Toggle navigation"
           onClick={() => setIsToggled((prev) => !prev)}
         >
-          <FontAwesomeIcon
-            icon={isToggled ? faClose : faBarsStaggered}
-            className="fs-4"
-          />
+          <span className="navbar-toggler__line"></span>
         </button>
         <div className="my-2 my-xl-0 w-100">
           <Search />
@@ -43,50 +52,56 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mb-2 mb-lg-0 align-content-xl-center gap-xl-1">
             <li className="nav-item">
-              <a className="nav-link active" href="/">
+              <Link href="/" className={`nav-link ${isActive("/")}`}>
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link href="/shop" className={`nav-link ${isActive("/shop")}`}>
                 Shop
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link href="/" className={`nav-link ${isActive("/")}`}>
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link href="/" className={`nav-link ${isActive("/")}`}>
                 Blog
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link href="/" className={`nav-link ${isActive("/")}`}>
                 Help
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link href="/" className={`nav-link ${isActive("/")}`}>
                 Contact
-              </a>
+              </Link>
             </li>
 
             <hr className="d-xl-none" />
             <div className="vr mx-2 h-75 my-auto d-none d-xl-block"></div>
 
             <li className="nav-item">
-              <a className="nav-link nav-link-with-icon" href="#">
+              <Link
+                href="/"
+                className={`nav-link nav-link-with-icon ${isActive("/")}`}
+              >
                 <FontAwesomeIcon icon={faUser} />
                 <span>My account</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link-with-icon" href="#">
+              <Link
+                href="/"
+                className={`nav-link nav-link-with-icon ${isActive("/")}`}
+              >
                 <FontAwesomeIcon icon={faSignOut} />
                 <span>Logout</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
