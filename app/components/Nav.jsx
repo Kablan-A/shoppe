@@ -34,7 +34,7 @@ function Nav() {
         <button
           className={`navbar-toggler ${
             isToggled && "navbar-toggler--toggled"
-          } border-0 ms-2 text-primary shadow-none`}
+          } border-0 ms-3 text-primary shadow-none`}
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"

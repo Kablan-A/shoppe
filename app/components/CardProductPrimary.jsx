@@ -1,10 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function CardProductPrimary({ img, title, link, currPrice, prevPrice }) {
+function CardProductPrimary({
+  img,
+  title,
+  baseLink,
+  currPrice,
+  prevPrice,
+  id,
+}) {
   return (
     <div className="card bg-transparent border-0 rounded-3 overflow-hidden">
-      <Link href={link} className="rounded-3 overflow-hidden">
+      <Link href={baseLink + id} className="rounded-3 overflow-hidden">
         <Image src={img} alt={title} priority className="w-100 h-auto" />
       </Link>
       <div className="card-body text-primary px-0 pb-0">

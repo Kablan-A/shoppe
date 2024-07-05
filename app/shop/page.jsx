@@ -1,6 +1,6 @@
 import GridProduct from "../components/GridProduct.";
 import CardProductPrimary from "../components/CardProductPrimary";
-import shopImg from "../imgHome/shopImg.png";
+import products from "./data/products";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSliders } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,43 +13,17 @@ export default function Shop() {
         <span>Filter</span>
       </div>
       <GridProduct>
-        <CardProductPrimary
-          img={shopImg}
-          title={"Earrings"}
-          link={"/shop/product"}
-          currPrice={"20.00"}
-        />
-        <CardProductPrimary
-          img={shopImg}
-          title={"Earrings"}
-          link={"/shop/product"}
-          currPrice={"20.00"}
-        />
-        <CardProductPrimary
-          img={shopImg}
-          title={"Earrings"}
-          link={"/shop/product"}
-          currPrice={"20.00"}
-        />
-        <CardProductPrimary
-          img={shopImg}
-          title={"Earrings"}
-          link={"/shop/product"}
-          currPrice={"20.00"}
-        />
-        <CardProductPrimary
-          img={shopImg}
-          title={"Earrings"}
-          link={"/shop/product"}
-          prevPrice={"30.00"}
-          currPrice={"20.00"}
-        />
-        <CardProductPrimary
-          img={shopImg}
-          title={"Earrings"}
-          link={"/shop/product"}
-          currPrice={"20.00"}
-        />
+        {products.map((product, index) => (
+          <CardProductPrimary
+            key={`product${index}`}
+            img={product.img}
+            title={product.title}
+            prevPrice={product.prevPrice}
+            currPrice={product.currPrice}
+            baseLink={product.baseLink}
+            id={product.id}
+          />
+        ))}
       </GridProduct>
     </section>
   );

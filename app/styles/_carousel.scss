@@ -17,6 +17,8 @@ $carousel-indicators-circle-height: 10px;
 
     [data-bs-target] {
       flex: 0 1 auto;
+      width: $carousel-indicators-circle-width;
+      height: $carousel-indicators-circle-height;
       margin-right: $carousel-indicator-spacer;
       margin-left: $carousel-indicator-spacer;
       background-color: $carousel-indicator-active-bg;
