@@ -1,0 +1,26 @@
+$carousel-indicators-circle-width: 10px;
+$carousel-indicators-circle-height: 10px;
+
+.carousel-indicators {
+  position: relative;
+  margin: 0;
+
+  [data-bs-target] {
+    flex: 1;
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #707070;
+  }
+
+  &--circle {
+    position: absolute;
+
+    [data-bs-target] {
+      flex: 0 1 auto;
+      margin-right: $carousel-indicator-spacer;
+      margin-left: $carousel-indicator-spacer;
+      background-color: $carousel-indicator-active-bg;
+      border-radius: 50%;
+    }
+  }
+}

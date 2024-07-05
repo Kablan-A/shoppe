@@ -4,11 +4,12 @@ import mainImg from "./imgHome/main.png";
 import secondary from "./imgHome/secondary.png";
 import CardProductPrimary from "./components/CardProductPrimary";
 import CardProductSecondary from "./components/CardProductSecondary";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="container">
-      <Carousel id={"carouselHome"}>
+      <Carousel id={"carouselHome"} hasCircleIndicators={true}>
         <CardProductSecondary
           img={mainImg}
           title={"Gold big hoops"}
@@ -36,9 +37,9 @@ export default function Home() {
       <section className="mt-4 mb-5">
         <div className="d-flex gap-3 justify-content-between mb-3">
           <h1 className="text-capitalize fs-5 m-0">Shop the latest</h1>
-          <a href="#" className="text-secondary fs-6">
+          <Link href="/shop" className="text-secondary fs-6">
             View all
-          </a>
+          </Link>
         </div>
         <GridProduct>
           <CardProductPrimary
