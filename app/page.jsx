@@ -1,36 +1,35 @@
 import Carousel from "./components/Carousel";
-import GridProduct from "./components/GridProduct.";
+import ProductsGrid from "./components/ProductsGrid";
 import mainImg from "./imgHome/main.png";
-import secondary from "./imgHome/secondary.png";
 import products from "./shop/data/products";
-import CardProductPrimary from "./components/CardProductPrimary";
-import CardProductSecondary from "./components/CardProductSecondary";
+import ProductCardPrimary from "./components/ProductCardPrimary";
+import ProductCardSecondary from "./components/ProductCardSecondary";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="container">
       <Carousel id={"carouselHome"} hasCircleIndicators={true}>
-        <CardProductSecondary
+        <ProductCardSecondary
           img={mainImg}
           title={"Gold big hoops"}
-          price={"68.00"}
-          link={"/"}
-          btnText={"view product"}
+          currPrice={"68.00"}
+          baseLink={"/shop/"}
+          id={"goldBigHoops"}
         />
-        <CardProductSecondary
+        <ProductCardSecondary
           img={mainImg}
           title={"Gold big hoops"}
-          price={"68.00"}
-          link={"/"}
-          btnText={"view product"}
+          currPrice={"68.00"}
+          baseLink={"/shop/"}
+          id={"goldBigHoops"}
         />
-        <CardProductSecondary
+        <ProductCardSecondary
           img={mainImg}
           title={"Gold big hoops"}
-          price={"68.00"}
-          link={"/"}
-          btnText={"view product"}
+          currPrice={"68.00"}
+          baseLink={"/shop/"}
+          id={"goldBigHoops"}
         />
       </Carousel>
 
@@ -42,9 +41,9 @@ export default function Home() {
           </Link>
         </div>
         {/* Only 4 newest products */}
-        <GridProduct>
+        <ProductsGrid>
           {products.map((product, index) => (
-            <CardProductPrimary
+            <ProductCardPrimary
               key={`product${index}`}
               img={product.img}
               title={product.title}
@@ -54,7 +53,7 @@ export default function Home() {
               id={product.id}
             />
           ))}
-        </GridProduct>
+        </ProductsGrid>
       </section>
     </main>
   );

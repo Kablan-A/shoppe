@@ -1,5 +1,5 @@
-import GridProduct from "../components/GridProduct.";
-import CardProductPrimary from "../components/CardProductPrimary";
+import ProductsGrid from "../components/ProductsGrid";
+import ProductCardPrimary from "../components/ProductCardPrimary";
 import products from "./data/products";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSliders } from "@fortawesome/free-solid-svg-icons";
@@ -12,9 +12,9 @@ export default function Shop() {
         <FontAwesomeIcon icon={faSliders} />
         <span>Filter</span>
       </div>
-      <GridProduct>
+      <ProductsGrid>
         {products.map((product, index) => (
-          <CardProductPrimary
+          <ProductCardPrimary
             key={`product${index}`}
             img={product.img}
             title={product.title}
@@ -24,7 +24,7 @@ export default function Shop() {
             id={product.id}
           />
         ))}
-      </GridProduct>
+      </ProductsGrid>
     </section>
   );
 }

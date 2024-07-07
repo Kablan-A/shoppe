@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function CardProductPrimary({
+function ProductCardPrimary({
   img,
   title,
   baseLink,
@@ -29,4 +29,4 @@ function CardProductPrimary({
   );
 }
 
-export default CardProductPrimary;
+export default ProductCardPrimary;

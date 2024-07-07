@@ -1,0 +1,44 @@
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+.snap-always {
+  scroll-snap-stop: always;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.slider {
+  display: flex;
+  align-self: center;
+  list-style-type: none;
+  width: 100%;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  &__item {
+    width: 60%;
+    height: auto;
+    flex-shrink: 0;
+
+    overflow: hidden;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    transition: $transition-base;
+  }
+}

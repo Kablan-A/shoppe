@@ -1,4 +1,4 @@
-function GridProduct({ children }) {
+function ProductsGrid({ children }) {
   return (
     <div className="row g-3">
       {children.map((child, index) => (
@@ -10,4 +10,4 @@ function GridProduct({ children }) {
   );
 }
 
-export default GridProduct;
+export default ProductsGrid;

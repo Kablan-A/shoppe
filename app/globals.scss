@@ -9,6 +9,22 @@
 @import "./styles/nav";
 @import "./styles/search";
 @import "./styles/carousel";
+@import "./styles/slider";
+
+// ------card------
+.card-title {
+  font-weight: 400;
+}
+// ------card:end------
+
+// ------dropdown------
+.fa-chevron-down {
+  transition: $transition-base;
+  &--active {
+    transform: rotate(-180deg);
+  }
+}
+// ------dropdown:end------
 
 // $utilities: map-merge(
 //   $utilities,
