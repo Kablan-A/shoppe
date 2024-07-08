@@ -8,7 +8,7 @@ import {
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import Search from "./Search";
+import Search from "../components/Search";
 import { usePathname } from "next/navigation";
 
 function Nav() {
@@ -23,7 +23,7 @@ function Nav() {
   }
 
   return (
-    <nav className="navbar navbar-expand-xl">
+    <nav className="navbar navbar-expand-xl mb-xl-2">
       <div className="container d-xl-flex align-content-xl-center">
         <Link href="/" className="navbar-brand text-uppercase me-auto">
           <span className="text-secondary">s</span>hoppe

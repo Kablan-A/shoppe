@@ -16,6 +16,21 @@ $link-decoration: none;
 }
 // ------form:end------
 
+// ------img------
+.img-square {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+// ------img:end------
+
+// ------ratio------
+.ratio-1x1 {
+  aspect-ratio: 1/1;
+}
+// ------ratio:end------
+
 // ------container------
 $container-padding-x: 2rem;
 // ------container:end------

@@ -1,6 +1,6 @@
 import Carousel from "./components/Carousel";
 import ProductsGrid from "./components/ProductsGrid";
-import mainImg from "./imgHome/main.png";
+import mainImg from "./imgHome/main.jpeg";
 import products from "./shop/data/products";
 import ProductCardPrimary from "./components/ProductCardPrimary";
 import ProductCardSecondary from "./components/ProductCardSecondary";
@@ -9,26 +9,23 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="container">
-      <Carousel id={"carouselHome"} hasCircleIndicators={true}>
+      <Carousel id={"carouselHome"} hasCircleIndicators>
         <ProductCardSecondary
           img={mainImg}
           title={"Gold big hoops"}
           currPrice={"68.00"}
-          baseLink={"/shop/"}
           id={"goldBigHoops"}
         />
         <ProductCardSecondary
           img={mainImg}
           title={"Gold big hoops"}
           currPrice={"68.00"}
-          baseLink={"/shop/"}
           id={"goldBigHoops"}
         />
         <ProductCardSecondary
           img={mainImg}
           title={"Gold big hoops"}
           currPrice={"68.00"}
-          baseLink={"/shop/"}
           id={"goldBigHoops"}
         />
       </Carousel>
@@ -44,12 +41,11 @@ export default function Home() {
         <ProductsGrid>
           {products.map((product, index) => (
             <ProductCardPrimary
-              key={`product${index}`}
+              key={`productHome${index}`}
               img={product.img}
               title={product.title}
               prevPrice={product.prevPrice}
               currPrice={product.currPrice}
-              baseLink={product.baseLink}
               id={product.id}
             />
           ))}

@@ -1,8 +1,8 @@
 import "./globals.scss";
 import { DM_Sans } from "next/font/google";
-import BootstrapClient from "./components/BootstrapClient";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
+import BootstrapClient from "./BootstrapClient";
+import Nav from "./layout/Nav";
+import Footer from "./layout/Footer";
 
 export const metadata = {
   title: "Shoppe",

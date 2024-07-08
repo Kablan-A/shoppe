@@ -15,12 +15,11 @@ export default function Shop() {
       <ProductsGrid>
         {products.map((product, index) => (
           <ProductCardPrimary
-            key={`product${index}`}
+            key={`productShop${index}`}
             img={product.img}
             title={product.title}
             prevPrice={product.prevPrice}
             currPrice={product.currPrice}
-            baseLink={product.baseLink}
             id={product.id}
           />
         ))}

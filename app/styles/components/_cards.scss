@@ -1,0 +1,53 @@
+// ------card------
+.card-title {
+  font-weight: 400;
+}
+// ------card:end------
+
+.product-card--secondary {
+  max-height: 85vh;
+
+  &__body {
+    width: fit-content;
+    align-self: flex-end;
+    text-transform: capitalize;
+    color: $white;
+    z-index: 2;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+  }
+
+  &__prices {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+
+  &__btn {
+    color: $white;
+    border: 1px solid currentColor;
+    font-size: 0.875rem;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &__title {
+      font-size: 1.75rem;
+    }
+
+    &__prices {
+      display: flex;
+      align-items: center;
+      font-size: 1.25rem;
+    }
+
+    &__btn {
+      color: $white;
+      border: 1px solid currentColor;
+      font-size: 1.25rem;
+    }
+  }
+  // @include media-breakpoint-up(md) { ... }
+  // @include media-breakpoint-up(lg) { ... }
+}

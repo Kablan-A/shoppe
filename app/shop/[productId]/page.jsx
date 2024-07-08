@@ -19,36 +19,36 @@ export default function Product({ params }) {
   return (
     <section className="container">
       <div className="card bg-transparent border-0 rounded-3 overflow-hidden mb-4">
-        <Carousel id={`carousel${product.id}`} hasBasicIndicators={true}>
+        <Carousel id={`carousel${product.id}`} hasBasicIndicators>
           <Image
             src={product.img}
             alt={product.title}
             priority
-            className="w-100 h-auto"
+            className="img-square"
           />
           <Image
             src={product.img}
             alt={product.title}
             priority
-            className="w-100 h-auto"
+            className="img-square"
           />
           <Image
             src={product.img}
             alt={product.title}
             priority
-            className="w-100 h-auto"
+            className="img-square"
           />
           <Image
             src={product.img}
             alt={product.title}
             priority
-            className="w-100 h-auto"
+            className="img-square"
           />
           <Image
             src={product.img}
             alt={product.title}
             priority
-            className="w-100 h-auto"
+            className="img-square"
           />
         </Carousel>
 

@@ -6,16 +6,11 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
-@import "./styles/nav";
-@import "./styles/search";
-@import "./styles/carousel";
-@import "./styles/slider";
-
-// ------card------
-.card-title {
-  font-weight: 400;
-}
-// ------card:end------
+@import "./styles/layout/nav";
+@import "./styles/components/search";
+@import "./styles/components/carousel";
+@import "./styles/components/slider";
+@import "./styles/components/cards";
 
 // ------dropdown------
 .fa-chevron-down {
@@ -25,23 +20,3 @@
   }
 }
 // ------dropdown:end------
-
-// $utilities: map-merge(
-//   $utilities,
-//   (
-//     "width": (
-//       property: width,
-//       class: w,
-//       responsive: true,
-//       values: (
-//         25: 25%,
-//         33: 33%,
-//         50: 50%,
-//         66: 66%,
-//         75: 75%,
-//         100: 100%,
-//         auto: auto,
-//       ),
-//     ),
-//   )
-// );

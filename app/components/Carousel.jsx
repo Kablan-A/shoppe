@@ -1,15 +1,26 @@
-function Carousel({ id, children, hasBasicIndicators, hasCircleIndicators }) {
-  const Indicators = children.map((_, index) => (
-    <button
-      key={`carouselIndicator${index}`}
-      type="button"
-      data-bs-target={`#${id}`}
-      data-bs-slide-to={index}
-      className={index === 0 ? "active" : ""}
-      aria-current={index === 0 ? "true" : "false"}
-      aria-label={`Slide ${index + 1}`}
-    ></button>
-  ));
+function Carousel({ id, hasBasicIndicators, hasCircleIndicators, children }) {
+  const Indicators = children.map((_, index) => {
+    const attributes = {
+      key: `carouselIndicator${index}`,
+      dataBsTarget: `#${id}`,
+      dataBsSlideTo: index,
+      className: index === 0 ? "active" : "",
+      ariaCurrent: index === 0 ? "true" : "false",
+      ariaLabel: `Slide ${index + 1}`,
+    };
+
+    return (
+      <button
+        key={attributes.key}
+        type="button"
+        data-bs-target={attributes.dataBsTarget}
+        data-bs-slide-to={attributes.dataBsSlideTo}
+        className={attributes.className}
+        aria-current={attributes.ariaCurrent}
+        aria-label={attributes.ariaLabel}
+      ></button>
+    );
+  });
 
   return (
     <div id={id} className="carousel slide">

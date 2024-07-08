@@ -1,30 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function ProductCardSecondary({
-  img,
-  title,
-  baseLink,
-  currPrice,
-  prevPrice,
-  id,
-}) {
+function ProductCardSecondary({ img, title, currPrice, prevPrice, id }) {
   return (
-    <div className="card rounded-3 overflow-hidden">
-      <Image src={img} alt={title} priority className="w-100 h-auto" />
-      <div className="card-img-overlay align-self-end text-white pb-5">
-        <h5 className="card-title text-capitalize">{title}</h5>
-        <div className="d-flex align-items-center gap-2 card-text">
+    <div className="card product-card--secondary rounded-3 overflow-hidden">
+      <Image src={img} alt={title} priority className="img-square" />
+      <div className="card-img-overlay product-card--secondary__body ms-3 mb-3 ms-sm-5 mb-sm-5">
+        <h3 className="card-title product-card--secondary__title">{title}</h3>
+        <div className="card-text product-card--secondary__prices gap-2">
           {prevPrice && (
-            <p className="text-danger text-decoration-line-through">
+            <p className="text-danger text-decoration-line-through mb-2">
               $ {prevPrice}
             </p>
           )}
-          <p>$ {currPrice}</p>
+          <p className="mb-2">$ {currPrice}</p>
         </div>
         <Link
-          href={baseLink + id}
-          className="btn text-white border-1 border-white text-capitalize"
+          href={`/shop/${id}`}
+          className="btn product-card--secondary__btn object-fit"
         >
           view product
         </Link>
