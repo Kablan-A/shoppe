@@ -20,7 +20,7 @@ function Nav() {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg mb-lg-2 bg-white position-sticky top-0 z-3">
+    <nav className="navbar navbar-expand-lg mb-2 bg-white position-sticky top-0 z-3">
       <div className="container border-1 border-bottom">
         <Link href="/" className="navbar-brand text-uppercase me-auto">
           <span className="text-secondary">s</span>hoppe
