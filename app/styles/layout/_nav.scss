@@ -1,9 +1,16 @@
+.nav-link {
+  text-transform: capitalize;
+}
+
 .nav-link-with-icon {
   display: flex !important;
   align-items: center;
   gap: 0.625rem;
 }
 
+.navbar {
+  padding: $navbar-padding-y 0 0 0;
+}
 .navbar-collapse {
   flex-grow: 0;
 }
@@ -51,14 +58,15 @@
   }
 }
 
-@include media-breakpoint-up(xl) {
+@include media-breakpoint-up(lg) {
   .nav-item {
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid transparent;
 
     &:has(.active),
     &:hover {
-      border-bottom: 1px solid $primary;
+      border-bottom-color: $primary;
     }
   }
 

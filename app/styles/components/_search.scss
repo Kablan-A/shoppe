@@ -1,10 +1,20 @@
+.search-container {
+  width: 100%;
+  margin: 0.5rem 0;
+
+  @include media-breakpoint-up(lg) {
+    width: 25%;
+    margin: 0 auto;
+  }
+}
+
 .search {
   width: 100%;
   position: relative;
 
-  & .fa-search {
+  & label {
     position: absolute;
-    top: 0.5rem;
+    top: 0.35rem;
     left: 0.75rem;
     color: $light;
   }
@@ -13,11 +23,8 @@
     height: 2rem;
     padding-left: 2.25rem;
     border-radius: 0.625rem;
+    // border-radius: 0;
+    // border: none;
+    // border-bottom: 1px solid $primary;
   }
 }
-
-// @include media-breakpoint-up(xl) {
-//   .search {
-//     width: 20%;
-//   }
-// }
