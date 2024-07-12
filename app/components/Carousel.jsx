@@ -1,5 +1,5 @@
 function Carousel({ id, hasBasicIndicators, hasCircleIndicators, children }) {
-  const Indicators = children.map((_, index) => {
+  const Indicators = children.map((child, index) => {
     const attributes = {
       key: `carouselIndicator${index}`,
       dataBsTarget: `#${id}`,
@@ -18,7 +18,9 @@ function Carousel({ id, hasBasicIndicators, hasCircleIndicators, children }) {
         className={attributes.className}
         aria-current={attributes.ariaCurrent}
         aria-label={attributes.ariaLabel}
-      ></button>
+      >
+        {hasBasicIndicators && child}
+      </button>
     );
   });
 

@@ -18,14 +18,8 @@ export default function Product({ params }) {
 
   return (
     <section className="container">
-      <div className="card bg-transparent border-0 rounded-3 overflow-hidden mb-4">
+      <div className="card bg-transparent border-0 rounded-3 overflow-hidden mb-3">
         <Carousel id={`carousel${product.id}`} hasBasicIndicators>
-          <Image
-            src={product.img}
-            alt={product.title}
-            priority
-            className="img-square"
-          />
           <Image
             src={product.img}
             alt={product.title}
@@ -54,7 +48,7 @@ export default function Product({ params }) {
 
         <div className="card-body text-primary px-0 pb-0">
           <h5 className="card-title text-capitalize">{product.title}</h5>
-          <div className="d-flex align-items-center gap-2 card-text text-secondary">
+          <div className="d-flex align-items-center gap-2 card-text text-secondary mb-4">
             {product.prevPrice && (
               <p className="text-danger text-decoration-line-through m-0">
                 $ {product.prevPrice}
@@ -67,9 +61,13 @@ export default function Product({ params }) {
               className="ms-auto text-primary fs-4"
             />
           </div>
+          <Button
+            variant={"primary"}
+            text={"add to cart"}
+            style={"w-100 mb-3"}
+          />
         </div>
       </div>
-      <Button variant={"primary"} text={"add to cart"} style={"w-100 mb-3"} />
       <hr />
       <div className="d-flex flex-column gap-2">
         <Dropdown title={"Description"}>

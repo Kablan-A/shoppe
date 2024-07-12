@@ -7,8 +7,8 @@ import {
 
 function Footer() {
   return (
-    <div className="container">
-      <footer className="py-5">
+    <footer className="py-5 bg-white">
+      <div className="container">
         <div className="row g-3 g-md-5">
           <div className="col-md-6 mb-3">
             <form autoComplete="on">
@@ -87,14 +87,14 @@ function Footer() {
             </div>
           </div>
 
-          <div className="col-md-6">
+          <div className="col-md-6 text-primary">
             <p>
               <b>&copy; 2024 Shoppe.</b> Terms of use <b>and</b> privacy policy.
             </p>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 }
 
